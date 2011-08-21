@@ -4,7 +4,7 @@
  * Author's e-mail: jarek.listy at gmail.com
  */
 
-package opencv2_cookbook.chapter04
+package opencv2_cookbook.chapter05
 
 
 import com.googlecode.javacv.cpp.opencv_imgproc._
@@ -15,9 +15,9 @@ import opencv2_cookbook.OpenCVUtils._
 
 /**
  * Example of using morphological erosion and dilation.
- * This Scala code functionally is equivalent to C++ code in chapter 4 section
+ * This Scala code functionally is equivalent to C++ code in chapter 5 section
  * "Eroding and dilating images using morphological filters".
- * The original example in the book is using "C++ API". Calls here use "C API" supported by JavaCV.*
+ * The original example in the book is using "C++ API". Calls here use "C API" supported by JavaCV.
  */
 object Ex1ErodingAndDilating extends App {
 
@@ -35,7 +35,7 @@ object Ex1ErodingAndDilating extends App {
     show(dilated, "Dilated")
 
     // Erode with 7x7 structural element
-    // First define rectangular kernel of size 7x7 with anchor point located in the middle (offset=3)
+    // First define rectangular kernel of size 7x7 with anchor point located in the middle, offset=3.
     val kernelSize = 7;
     val KernelAnchorOffset = 3;
     val kernel = cvCreateStructuringElementEx(
