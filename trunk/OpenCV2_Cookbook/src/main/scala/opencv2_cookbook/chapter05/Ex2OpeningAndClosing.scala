@@ -4,7 +4,7 @@
  * Author's e-mail: jarek.listy at gmail.com
  */
 
-package opencv2_cookbook.chapter04
+package opencv2_cookbook.chapter05
 
 import java.io.File
 import com.googlecode.javacv.cpp.opencv_core._
@@ -14,7 +14,7 @@ import opencv2_cookbook.OpenCVUtils._
 
 /**
  * Example of using morphological opening and closing.
- * This Scala code functionally is equivalent to C++ code in chapter 4 section
+ * This Scala code functionally is equivalent to C++ code in chapter 5 section
  * "Opening and closing images using morphological filters".
  * The original example in the book is using "C++ API". Calls here use "C API" supported by JavaCV.
  */
