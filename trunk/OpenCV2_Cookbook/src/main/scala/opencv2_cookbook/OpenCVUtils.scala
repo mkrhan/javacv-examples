@@ -1,9 +1,8 @@
 /*
-* Copyright (c) 2011 Jarek Sacha. All Rights Reserved.
-*
-* Author's e-mail: jarek.listy at gmail.com
-*
-*/
+ * Copyright (c) 2011 Jarek Sacha. All Rights Reserved.
+ *
+ * Author's e-mail: jarek.listy at gmail.com
+ */
 
 package opencv2_cookbook
 
@@ -20,12 +19,25 @@ import com.googlecode.javacv.cpp.opencv_features2d.KeyPoint
 object OpenCVUtils {
 
     /**
-     * Load an image and show in a CanvasFrame. If image cannot be loaded the application will exit with code 1.
-     * @return loaded image
+     * Load an image and show in a CanvasFrame.
+     *
+     * If image cannot be loaded the application will exit with code 1.
+     *
+     * @param file image file
+     * @param flags Flags specifying the color type of a loaded image:
+     * <ul>
+     *     <li> {@code >0} Return a 3-channel color image</li>
+     *     <li> {@code =0} Return a grayscale image</li>
+     *     <li> {@code <0} Return the loaded image as is. Note that in the current implementation
+     *     the alpha channel, if any, is stripped from the output image. For example, a 4-channel
+     *     RGBA image is loaded as RGB if flags {@code >} 0.</li>
+     * </ul>
+     * Default is grayscale.
+     * @return Loaded image
      */
-    def loadAndShow(file: File): IplImage = {
+    def loadAndShow(file: File, flags: Int = CV_LOAD_IMAGE_GRAYSCALE): IplImage = {
         // Read input image
-        val image = cvLoadImage(file.getAbsolutePath, 0)
+        val image = cvLoadImage(file.getAbsolutePath, flags)
         if (image == null) {
             println("Couldn't load image: " + file.getAbsolutePath)
             sys.exit(1)
