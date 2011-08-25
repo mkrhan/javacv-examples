@@ -8,7 +8,6 @@ package opencv2_cookbook.chapter08
 
 import opencv2_cookbook.OpenCVUtils._
 import java.io.File
-import com.googlecode.javacv.cpp.opencv_core._
 import com.googlecode.javacv.cpp.opencv_features2d._
 
 
@@ -22,8 +21,7 @@ object SURF extends App {
 
     val keyPoints = new KeyPoint()
     val surf = new SurfFeatureDetector()
-    val descriptors = new CvMat()
-    surf.detect(image, keyPoints, descriptors)
+    surf.detect(image, keyPoints, null)
 
     System.out.println("keyPoints: " + keyPoints.capacity)
 
