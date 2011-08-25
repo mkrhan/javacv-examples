@@ -16,7 +16,7 @@ import com.googlecode.javacv.cpp.opencv_core._
  * Example of extracting SURF features from section "Detecting the scale-invariant SURF features" in chapter 8.
  * This version is using "C API", original example in the book is using "C++ API".
  */
-object Ch8SURF_c extends App {
+object SURF_c extends App {
 
     // Read input image
     val image = loadAndShow(new File("../data/church01.jpg"))
