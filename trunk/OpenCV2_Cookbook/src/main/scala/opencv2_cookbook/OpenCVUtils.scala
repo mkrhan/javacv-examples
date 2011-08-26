@@ -156,7 +156,7 @@ object OpenCVUtils {
         g2d.setColor(Color.WHITE)
 
         points.foreach(p => {
-            val radius = p.size()
+            val radius = p.size() / 2
             val r = if (radius == Float.NaN || radius < 3) 3 else radius
             val pt = p.pt
             g2d.draw(new Ellipse2D.Double(pt.x - r, pt.y - r, r * 2, r * 2))
