@@ -6,9 +6,9 @@
 
 package opencv2_cookbook.chapter08
 
-import opencv2_cookbook.OpenCVUtils._
 import java.io.File
 import com.googlecode.javacv.cpp.opencv_features2d._
+import opencv2_cookbook.OpenCVUtils._
 
 
 /**
@@ -20,10 +20,19 @@ object SURF extends App {
     val image = loadAndShow(new File("../data/church01.jpg"))
 
     val keyPoints = new KeyPoint()
-    val surf = new SurfFeatureDetector()
+    val surf = new SurfFeatureDetector(2500d, 3, 4, true)
     surf.detect(image, keyPoints, null)
 
     System.out.println("keyPoints: " + keyPoints.capacity)
 
-    // drawKeypoints(...)
+    // Convert keyPoints to an array
+    val n = keyPoints.capacity
+    val points = new Array[KeyPoint](n)
+    for (i <- 0 until n) {
+        val p = new KeyPoint(keyPoints.position(i))
+        points(i) = p
+    }
+
+    // Draw keyPoints
+    show(drawOnImage(image, points), "Key Points")
 }
