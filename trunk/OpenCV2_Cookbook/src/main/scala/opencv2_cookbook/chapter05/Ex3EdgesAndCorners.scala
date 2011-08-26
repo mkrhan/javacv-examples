@@ -18,7 +18,7 @@ import opencv2_cookbook.OpenCVUtils._
 object Ex3EdgesAndCorners extends App {
 
     // Read input image
-    val image = loadAndShow(new File("../data/building.jpg"))
+    val image = loadAndShowOrExit(new File("../data/building.jpg"))
 
     val morpho = new MorphoFeatures
     morpho.threshold = 40

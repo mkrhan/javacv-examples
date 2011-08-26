@@ -21,7 +21,7 @@ import opencv2_cookbook.OpenCVUtils._
 object Ex2OpeningAndClosing extends App {
 
     // Read input image
-    val image = loadAndShow(new File("../data/binary.bmp"))
+    val image = loadAndShowOrExit(new File("../data/binary.bmp"))
 
     // Create 5x5 structural element
     val element5 = cvCreateStructuringElementEx(5, 5, 2, 2, CV_SHAPE_RECT, null)
