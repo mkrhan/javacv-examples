@@ -22,7 +22,7 @@ import opencv2_cookbook.OpenCVUtils._
 object Ex1ErodingAndDilating extends App {
 
     // Read input image
-    val image = loadAndShow(new File("../data/binary.bmp"))
+    val image = loadAndShowOrExit(new File("../data/binary.bmp"))
 
     // Erode the image, by default 3x3 element is used
     val eroded = cvCreateImage(cvGetSize(image), image.depth, 1)

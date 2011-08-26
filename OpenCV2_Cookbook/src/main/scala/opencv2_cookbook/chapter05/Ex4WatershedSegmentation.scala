@@ -19,8 +19,8 @@ import com.googlecode.javacv.cpp.opencv_highgui._
 object Ex4WatershedSegmentation extends App {
 
     // Read input image
-    val image = loadAndShow(new File("../data/group.jpg"), CV_LOAD_IMAGE_COLOR)
-    val binary = loadAndShow(new File("../data/binary.bmp"))
+    val image = loadAndShowOrExit(new File("../data/group.jpg"), CV_LOAD_IMAGE_COLOR)
+    val binary = loadAndShowOrExit(new File("../data/binary.bmp"))
 
     // Eliminate noise and smaller objects, repeat erosion 6 times
     val fg = cvCreateImage(cvGetSize(binary), binary.depth, 1 /* channels */)

@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2011 Jarek Sacha. All Rights Reserved.
+ *
+ * Author's e-mail: jarek.listy at gmail.com
+ */
+
 package opencv2_cookbook.chapter08
 
 /*
@@ -19,7 +25,7 @@ import opencv2_cookbook.OpenCVUtils._
 object SIFT extends App {
 
     // Read input image
-    val image = loadAndShow(new File("../data/church01.jpg"))
+    val image = loadAndShowOrExit(new File("../data/church01.jpg"))
 
     val keyPoints = new KeyPoint()
     val sift = new SiftFeatureDetector(

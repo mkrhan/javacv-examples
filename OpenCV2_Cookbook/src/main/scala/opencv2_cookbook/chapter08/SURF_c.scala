@@ -19,7 +19,7 @@ import com.googlecode.javacv.cpp.opencv_core._
 object SURF_c extends App {
 
     // Read input image
-    val image = loadAndShow(new File("../data/church01.jpg"))
+    val image = loadAndShowOrExit(new File("../data/church01.jpg"))
 
     // Setup SURF
     val keyPoints = new CvSeq()
