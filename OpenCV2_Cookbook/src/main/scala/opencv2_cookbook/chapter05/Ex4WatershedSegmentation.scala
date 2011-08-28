@@ -44,14 +44,11 @@ object Ex4WatershedSegmentation extends App {
     segmenter.setMarkers(markers)
 
     val segmentMarkers = segmenter.process(image)
-    cvSaveImage("../tmp/segmentMarkers.tif", segmentMarkers)
     show(segmentMarkers, "segmentMarkers")
 
     val segmentation = segmenter.getSegmentation
-    cvSaveImage("../tmp/segmentation.tif", segmentation)
     show(segmentation, "Segmentation")
 
     val watershed = segmenter.getWatersheds
-    cvSaveImage("../tmp/watershed.tif", watershed)
     show(watershed, "Watersheds")
 }
