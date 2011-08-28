@@ -33,14 +33,14 @@ class WatershedSegmenter {
     def getSegmentation: IplImage = {
         // all segment with label higher than 255
         // will be assigned value 255
-        def result = cvCreateImage(cvGetSize(_markers), IPL_DEPTH_8U, 1 /* channels */)
+        val result = cvCreateImage(cvGetSize(_markers), IPL_DEPTH_8U, 1 /* channels */)
         cvConvertScale(_markers, result, 1 /* scale */ , 0 /* shift */)
         result
     }
 
 
     def getWatersheds: IplImage = {
-        def result = cvCreateImage(cvGetSize(_markers), IPL_DEPTH_8U, 1 /* channels */)
+        val result = cvCreateImage(cvGetSize(_markers), IPL_DEPTH_8U, 1 /* channels */)
         cvConvertScale(_markers, result, 255 /* scale */ , 255 /* shift */)
         result
     }
