@@ -1,4 +1,5 @@
 #summary JavaCV versions of C++ examples from book "OpenCV2 Computer Vision Applications Programming Cookbook"
+#labels Featured
 
 === Overview ===
 
