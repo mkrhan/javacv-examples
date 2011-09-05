@@ -6,13 +6,6 @@
 
 package opencv2_cookbook.chapter08
 
-/*
- * Copyright (c) 2011 Jarek Sacha. All Rights Reserved.
- *
- * Author's e-mail: jarek.listy at gmail.com
- */
-
-
 import java.io.File
 import com.googlecode.javacv.cpp.opencv_features2d._
 import com.googlecode.javacv.cpp.opencv_features2d.SIFT.CommonParams._
