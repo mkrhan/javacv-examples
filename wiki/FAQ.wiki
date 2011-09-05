@@ -1,5 +1,0 @@
-#summary Frequently Asked Questions
-
-=== How to debug JNI Code ===
-
-You can find one of a good tutorials here: http://www.codeproject.com/KB/java/DebugJavaJNIApplication.aspx
