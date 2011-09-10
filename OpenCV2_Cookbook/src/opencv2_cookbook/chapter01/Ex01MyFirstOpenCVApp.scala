@@ -19,7 +19,7 @@ import javax.swing.JFrame._
 object Ex01MyFirstOpenCVApp extends App {
 
     // read an image
-    val image = cvLoadImage("boldt.jpg")
+    val image = cvLoadImage("../data/boldt.jpg")
 
     // create image window named "My Image"
     val canvas = new CanvasFrame("My Image")
