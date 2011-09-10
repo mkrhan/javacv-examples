@@ -1,0 +1,200 @@
+#summary JavaCV versions of C++ examples from chapter 1 of the book "OpenCV2 Computer Vision Applications Programming Cookbook" titled "Playing with Images"
+#labels Featured
+
+<wiki:toc max_depth="2" />
+
+= Introduction =
+
+To work with OpenCV from a Java platform you need to install OpenCV and the JavaCV.
+It helps to use a good IDE as many things can be setup and automated. 
+While example code is not dependent on any IDE, current version of this document assumes that you will be using IntelliJ IDEA
+(tested with IDEA 10.5.2).
+If you have experience with Eclipse, NetBeans, or other, you should be able to use them too.
+
+The idea is that once you are setup you can run any JavaCV example, or you own JavaCV code, 
+by simply right clicking on a code file and selecting 'Run'. Please bear through a couple of steps below to get it ready.
+If you have some suggestions how to make this process simpler please comment at the bottom of the page or send an email.
+
+Examples here are written in Scala. The description of the setup is for IntelliJ IDEA as it has an excellent
+support for Scala, and it is an excellent Java IDE. It works with both the free Community and the paid Ultimate editions.
+
+== Installing IDE for work with JavaCV ==
+You will need to download and install the development environment components:
+
+  * [http://www.oracle.com/technetwork/java/javase/downloads/index.html Java SE SDK]
+  * [http://www.scala-lang.org/downloads Scala]
+  * [http://www.jetbrains.com/idea/ IntelliJ IDEA]
+
+Once you have installed all three. Startup IDEA and select from the menu Settings > Plugins > Available. Then install Scala plugin.
+You will also need to make IDEA aware where you have installed Java SDK and where you have installed Scala.
+
+==Getting the OpenCV Cookbook examples for JavaCV==
+The only option right now is to check out the examples from the code repository.
+Here we describe how to quickly do it with IDEA, you can also use your favorite Subversion client using information
+on the examples [https://code.google.com/p/javacv-examples/source/checkout Source] page.
+
+==Downloading Examples using IDEA==
+
+  # Start IDEA
+  # Select from menu: `Version Control` > `Checkout from Version Control` > `Subversion` <br> [Ch1_Checkout_from_Subversion_1.png]
+  # Click on the "+" next to `Repositories` and add location of the `OpenCV2_Cookbook` examples: `http://javacv-examples.googlecode.com/svn/trunk/` <br> [Ch1_New_Repository_Location_1.png] 
+  # Click `OK` to add return to `Checkout from Subversion` dialog. 
+  # Select `OpenCV2_Cookbook`  <br>  [Ch1_Checkout_from_Subversion_1.png]  <br> And click on `Checkout`
+  # Select location for the example code
+  # Select checkout options, you may want to ask to create a subdirectory for the code as shown in the example: <br>  []
+  # Confirm repository format version (default should be fine)
+  # Wait for IDEA to download the examples
+  # Once download is finished, IDEA will ask you whether to create a project for the examples. Select `Yes`.
+  # You will go through a project creation wizard. Select defaults, except when asked to overwrite the module file: IDEA will say that `OpenCV2_Examples.iml` already exists, say `No` if asked to overwrite. <br> [example dialog]
+
+==Let Maven Download What it Needs==
+Maven is used to define dependencies and simplify setup. You will need to execute it once to download what it needs. It needs to be done only once.
+  # Click on the vertical `Maven Projects` tab on the right side of the IDEA window to open `Maven Projects` panel.
+  # Click on "+" sign to add a Maven project definition file "pom.xml" and select `pom.xml` in the `OpenCV2_Cookbook` directory.
+  # Expand `OpenCV2_Cookbook` > `Lifecycle`, Select `compile` and click on green triangle to compile the examples. This will download needed dependencies and build the example code. This should finish without errors.
+
+==Installing OpenCV and JavaCV Libraries==
+Now you need to get OpenCV and JavaCV libraries.
+The recommended way is to use  pre-configured combined OpenCV+JavaCV binaries that can be downloaded with the examples. 
+The archive contains all the needed native dependencies for OpenCV and JavaCV in a single directory. 
+It is intended to be extracted into a `sandbox` subdirectory under the `OpenCV2_Cookbook` directory 
+Make sure that they the binaries are in `sandbox` not in its subdirectory. 
+You project structure should look like this `[image]`.
+
+==Setup Working Directory==
+
+And the very last step of setup, configure default startup directory. 
+  # Select `Run` > `Edit Configurations`
+  # Expand the `Defaults` node and select `Application`
+  # Under working directory type `$MODULE_DIR$\sandbox` 
+
+==Run the Examples==
+Now you are ready to test the examples. For instance, to run the first example from chapter 1:
+  # in project window select Ex1MyFirstOpenCVApp
+  # Right click on it and select `Run`
+
+If everything goes fine the example will be compiled and run. It should open the image and display it on the screen. <br> [Ch1_My_Image_1.png]
+
+== Troubleshooting ==
+===UnsatisfiedLinkError===
+If you get an error message that looks like this
+{{{
+Exception in thread "main" java.lang.UnsatisfiedLinkError: no jniopencv_core in java.library.path
+	at java.lang.ClassLoader.loadLibrary(ClassLoader.java:...
+}}}	
+This means that you native binaries are not setup correctly. Make sure that you follow instructions in section
+[OpenCV2_Cookbook_Examples_Chapter_1.wiki#Installing_OpenCV_and_JavaCV_Libraries Installing OpenCV and JavaCV Libraries] and
+in [OpenCV2_Cookbook_Examples_Chapter_1.wiki#Setup_Working_Directory Setup_Working_Directory]
+
+===NullPointerException in CanvasFrame.showImage()===
+If you get an error message that looks like this
+{{{
+Exception in thread "main" java.lang.NullPointerException
+	at com.googlecode.javacv.CanvasFrame.showImage(CanvasFrame.java:331)
+	at opencv2_cookbook.chapter01.Ex01MyFirstOpenCVApp$delayedInit$body.apply(Ex01MyFirstOpenCVApp.scala:31)
+	...
+}}}
+Congratulations, your first JavaCV application actually started but had trouble loading an image.
+The `Ex01MyFirstOpenCVApp` is very simple and does not check if image was actually loaded.
+If it was not the `image` variable is set to `null`.
+It is then passed to CanvasFrame and is causing an exception.
+You may need to check if the image is in the right place in the relation to the startup directory.
+
+= Loading, Displaying, and Saving Images with JavaCV =
+
+A simple example of loading and displaying an image using JavaCV is in class `opencv2_cookbook.chapter01.Ex01MyFirstOpenCVApp`:
+{{{
+import com.googlecode.javacv.CanvasFrame
+import com.googlecode.javacv.cpp.opencv_highgui._
+import javax.swing.JFrame._
+
+object Ex01MyFirstOpenCVApp extends App {
+
+    // read an image
+    val image = cvLoadImage("boldt.jpg")
+
+    // create image window named "My Image"
+    val canvas = new CanvasFrame("My Image")
+
+    // request closing of the application when the image window is closed
+    canvas.setDefaultCloseOperation(EXIT_ON_CLOSE)
+
+    // show image on window
+    canvas.showImage(image)
+}
+}}}
+It is based on the example on page 18 of the cookbook. Note how `CanvasFrame` from JavaCV API is used to display the image.
+
+==Loading Images==
+
+JavaCV methods for loading images and saving images are based on based on OpenCV. They are in the class `com.googlecode.javacv.cpp.opencv_highgui`.
+Note that class is in named starting with small letter to look similar to the C++ module `opencv_highgui` where OpenCV method for reading and writing images are located.
+Images can be loaded in two formats `IplImage` using `cvLoadImage` and `CvMat` using `cvLoadImageM`.
+`cvLoadImage` takes one or two parameters.
+The first parameter is a file name, the second is a conversion parameter, frequently used to use color images area gray scale.
+Here are some examples.
+{{{
+import com.googlecode.javacv.cpp.opencv_highgui._
+import com.googlecode.javacv.cpp.opencv_core.IplImage
+
+val image1: IplImage = cvLoadImage("../data/boldt.jpg")
+val image2: IplImage = cvLoadImage("../data/boldt.jpg", CV_LOAD_IMAGE_COLOR)
+val image3: IplImage = cvLoadImage("../data/boldt.jpg", CV_LOAD_IMAGE_GRAYSCALE)
+}}}
+The default value for the conversion parameter is `CV_LOAD_IMAGE_COLOR`.
+
+To load image in `CvMat` format use `cvLoadImageM`, parameter are the same as for `cvLoadImage`:
+{{{
+import com.googlecode.javacv.cpp.opencv_core.CvMat
+
+val image4: CvMat = cvLoadImageM("../data/boldt.jpg")
+val image5: CvMat = cvLoadImageM("../data/boldt.jpg", CV_LOAD_IMAGE_COLOR)
+val image6: CvMat = cvLoadImageM("../data/boldt.jpg", CV_LOAD_IMAGE_GRAYSCALE)
+}}}
+
+If image cannot be loaded both `cvLoadImage` and `cvLoadImageM` return `null`. They do not throw exceptions.
+You may want to wrap a call to `cvLoadImage` (or `cvLoadImageM`) in a method that throws an exception if an image cannot be loaded.
+{{{
+def load(file: File, flags: Int = CV_LOAD_IMAGE_GRAYSCALE): IplImage = {
+    // Verify file
+    if (!file.exists()) {
+        throw new FileNotFoundException("Image file does not exist: " + file.getAbsolutePath)
+    }
+    // Read input image
+    val image = cvLoadImage(file.getAbsolutePath, flags)
+    if (image == null) {
+        throw new IOException("Couldn't load image: " + file.getAbsolutePath)
+    }
+    // Return loaded image
+    image
+}
+}}}
+
+==Saving Images==
+
+The method `cvSaveImage(filename, image)` saves the image to the specified file.
+The image format is chosen based on the filename extension.
+The method returns an error code.
+{{{
+ val err : Int = cvSaveImage("my_image.png", image1)
+}}}
+
+==Displaying Images==
+
+The easy way to display image using JavaCV is to use `CanvasFrame` as in the example `Ex01MyFirstOpenCVApp`, see above or [https://code.google.com/p/javacv-examples/source/browse/trunk/OpenCV2_Cookbook/src/opencv2_cookbook/chapter01/Ex01MyFirstOpenCVApp.scala here].
+It shows the image in a new window.
+
+JavaCV also add to  `IplImage` a method `getBufferedImage` to convert OpenCV data to Java's `java.awt.image.BufferedImage` that can be displayed using standard Java approach.
+You can see example of that in `Ex2MyFirstGUIApp`, see next section.
+
+
+= Creating a GUI application using Scala Swing =
+
+It is not an intention of this module to describe how to create GUI applications in Scala or Java.
+However for the sake of completeness an equivalent of a Qt GUI application presented in the Cookbook is provided.
+As the original, it is a simple frame with two buttons "Open Image" and "Process" on the left.
+Loaded image is displayed in the middle of the frame. The example is using Scala Swing framework, which may be interesting in its own right.
+
+[Ex01MyFirstOpenCVApp.png]
+
+You can find code for the `Ex2MyFirstGUIApp` example [https://code.google.com/p/javacv-examples/source/browse/trunk/OpenCV2_Cookbook/src/opencv2_cookbook/chapter01/Ex2MyFirstGUIApp.scala here].
