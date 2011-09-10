@@ -24,7 +24,7 @@ Here is a quick preview that compares an original C++ example in the Cookbook (p
 with code in Scala and Java using JavaCV wrapper.
 
 Here is the original C++ example that opens an image (without error cheking), creates a window, 
-displayes image in the window, and waits for 5 seconds before exiting.
+displays image in the window, and waits for 5 seconds before exiting.
 
 {{{
 #include <opencv2/core/core.hpp>
