@@ -102,7 +102,10 @@ Simplest way to use the JavaCV examples is to browse the code [https://code.goog
 With a little bit of setup you can execute the examples on you own computer. The benefit is that you can start modifying the examples and build your own algorithms. The setup is explained in this module commons for Chapter 1.
 
 =Organization of the Example Code=
-The code is organized into packages that correspond to chapters in the Cookbook, for instance [https://code.google.com/p/javacv-examples/source/browse/#svn%2Ftrunk%2FOpenCV2_Cookbook%2Fsrc%2Fopencv2_cookbook%2Fchapter08 opencv2_cookbook.chpater8]. Individual examples roughly correspond to sections within each chapter.
+The code is organized into packages that correspond to chapters in the Cookbook, for instance [https://code.google.com/p/javacv-examples/source/browse/#svn%2Ftrunk%2FOpenCV2_Cookbook%2Fsrc%2Fopencv2_cookbook%2Fchapter08 opencv2_cookbook.chpater8].
+Individual examples roughly correspond to sections within each chapter.
+
+ * [OpenCV2_Cookbook_Examples_Chapter_1.wiki Chapter 1] describes IDE setup to run the examples, gives a basic example of loading and displaying an image, and an example of a basic GUI example that does basic image processing.
 
 =Why Scala?=
 [http://www.scala-lang.org Scala] was chosen since it is more expressive than Java. You can achieve the same result with smaller amount of code. Smaller boilerplate code makes examples easier to read and understand. Unlike many other JVM languages, compiled Scala code is fast, on par with Java. Custom image processing code may require loops over image pixels. Specialized Scala compiler plugins, like [https://code.google.com/p/scalacl/wiki/ScalaCLPlugin ScalaCL], can optimize and significantly speed up execution of loops. 
