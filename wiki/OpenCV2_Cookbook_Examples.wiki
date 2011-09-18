@@ -99,7 +99,9 @@ This example module is intended as a companion to the Cookbook. The recommended 
 
 Simplest way to use the JavaCV examples is to browse the code [https://code.google.com/p/javacv-examples/source/browse/#svn%2Ftrunk%2FOpenCV2_Cookbook%2Fsrc%2Fopencv2_cookbook on-line] or use SVN to check them out to your computer [https://code.google.com/p/javacv-examples/source/checkout] 
 
-With a little bit of setup you can execute the examples on you own computer. The benefit is that you can start modifying the examples and build your own algorithms. The setup is explained in this module commons for Chapter 1.
+With a little bit of setup you can execute the examples on you own computer.
+The benefit is that you can start modifying the examples and build your own algorithms.
+The setup is explained in this module comments for [OpenCV2_Cookbook_Examples_Chapter_1 Chapter 1].
 
 =Organization of the Example Code=
 The code is organized into packages that correspond to chapters in the Cookbook, for instance [https://code.google.com/p/javacv-examples/source/browse/#svn%2Ftrunk%2FOpenCV2_Cookbook%2Fsrc%2Fopencv2_cookbook%2Fchapter08 opencv2_cookbook.chpater8].
@@ -110,5 +112,5 @@ Individual examples roughly correspond to sections within each chapter.
 =Why Scala?=
 [http://www.scala-lang.org Scala] was chosen since it is more expressive than Java. You can achieve the same result with smaller amount of code. Smaller boilerplate code makes examples easier to read and understand. Unlike many other JVM languages, compiled Scala code is fast, on par with Java. Custom image processing code may require loops over image pixels. Specialized Scala compiler plugins, like [https://code.google.com/p/scalacl/wiki/ScalaCLPlugin ScalaCL], can optimize and significantly speed up execution of loops. 
 Scala supports writing of scripts, code that can be executed without explicit compiling. Scala also has a console, called REPL, where single lines of code can be typed in and executed on a spot. Both of those features make prototyping of OpenCV-based programs easier in Scala than in Java.
-Last but not least, IDE support for Scala reached level of maturity allowing easy creation, modification, and execution of Scala code. In particular, the Scala plugin for JetBrains IDEA works very well. Scala plugins Eclipse and NetBeans are also improving
+Last but not least, IDE support for Scala reached level of maturity allowing easy creation, modification, and execution of Scala code. In particular, the Scala plugin for JetBrains IDEA works very well. Scala plugins Eclipse and NetBeans are also improving.
 
