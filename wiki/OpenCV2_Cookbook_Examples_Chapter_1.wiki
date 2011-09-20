@@ -46,7 +46,7 @@ You can download it isung IDEA, described in next section, or you can also use y
   # Select from menu: `Version Control` > `Checkout from Version Control` > `Subversion` <br> [http://javacv-examples.googlecode.com/svn/wiki/Ch1_Checkout_from_Subversion_1.png]
   # Click on the "+" next to `Repositories` and add location of the `OpenCV2_Cookbook` examples: `http://javacv-examples.googlecode.com/svn/trunk/` <br> [http://javacv-examples.googlecode.com/svn/wiki/Ch1_New_Repository_Location_1.png] 
   # Click `OK` to add return to `Checkout from Subversion` dialog. 
-  # Select `http://javacv-examples.googlecode.com/svn/trunk/`  <br>  [http://javacv-examples.googlecode.com/svn/wiki/Ch1_Checkout_from_Subversion_1.png]  <br> And click on `Checkout`
+  # Select `http://javacv-examples.googlecode.com/svn/trunk/`  <br>  [http://javacv-examples.googlecode.com/svn/wiki/Ch1_Checkout_from_Subversion_2.png]  <br> And click on `Checkout`
   # Select location for the example code (you may have to create a new folder, call it `javacv-examples`)
   # Confirm checkout options (default should be fine)
   # Confirm repository format version (default should be fine)
