@@ -6,32 +6,39 @@
 = Introduction =
 
 To work with OpenCV from a Java platform you need to install OpenCV and the JavaCV.
-It helps to use a good IDE as many things can be setup and automated. 
-While example code is not dependent on any IDE, current version of this document assumes that you will be using IntelliJ IDEA
-(tested with IDEA 10.5.2).
+The examples use a bit different setup than default.
+It is described below.
+
+The example code can be used in any IDE or from command line. 
+Description here focused on using IntelliJ IDEA, and show how it can be setup run each example with minimum effort. 
 If you have experience with Eclipse, NetBeans, or other, you should be able to use them too.
 
 The idea is that once you are setup you can run any JavaCV example, or you own JavaCV code, 
-by simply right clicking on a code file and selecting 'Run'. Please bear through a couple of steps below to get it ready.
+by simply right clicking on a code file and selecting 'Run'. Please go through a couple of steps below to get it ready.
 If you have some suggestions how to make this process simpler please comment at the bottom of the page or send an email.
 
-Examples here are written in Scala. The description of the setup is for IntelliJ IDEA as it has an excellent
-support for Scala, and it is an excellent Java IDE. It works with both the free Community and the paid Ultimate editions.
+Examples here are written in Scala. 
+IntelliJ IDEA as it has an excellent support for Scala, and it is also an excellent Java IDE. 
+The setup works with both the free IDEA Community and the paid IDEA Ultimate editions.
 
 == Installing IDE for work with JavaCV ==
 You will need to download and install the development environment components:
 
   * [http://www.oracle.com/technetwork/java/javase/downloads/index.html Java SE SDK]
-  * [http://www.scala-lang.org/downloads Scala]
   * [http://www.jetbrains.com/idea/ IntelliJ IDEA]
+  * [http://www.scala-lang.org/downloads Scala], optional but recommended for Scala development.
 
-Once you have installed all three. Startup IDEA and select from the menu Settings > Plugins > Available. Then install Scala plugin.
-You will also need to make IDEA aware where you have installed Java SDK and where you have installed Scala.
+Once you have IDEA installed you can install IDEA's Scala plugin. 
 
-==Getting the OpenCV Cookbook examples for JavaCV==
-The only option right now is to check out the examples from the code repository.
-Here we describe how to quickly do it with IDEA, you can also use your favorite Subversion client using information
-on the examples [https://code.google.com/p/javacv-examples/source/checkout Source] page.
+  # Startup IDEA and 
+  # Select from the menu Settings > Plugins > Available.
+  # Click on the "Available" tab and wait for IDEA to download list of plugins from its website
+  # Find Scala plugin on the list, then right-click and select "Download and Install"
+  # After the plugin installs you will need to restart IDEA
+  
+==Getting the OpenCV Cookbook Examples for JavaCV==
+The OpenCV Cookbook Examples for JavaCV are available through Subversion code repository. 
+You can download it isung IDEA, described in next section, or you can also use your favorite Subversion client follwing information on the examples [https://code.google.com/p/javacv-examples/source/checkout Source] page.
 
 ==Downloading Examples using IDEA==
 
@@ -39,19 +46,16 @@ on the examples [https://code.google.com/p/javacv-examples/source/checkout Sourc
   # Select from menu: `Version Control` > `Checkout from Version Control` > `Subversion` <br> [Ch1_Checkout_from_Subversion_1.png]
   # Click on the "+" next to `Repositories` and add location of the `OpenCV2_Cookbook` examples: `http://javacv-examples.googlecode.com/svn/trunk/` <br> [Ch1_New_Repository_Location_1.png] 
   # Click `OK` to add return to `Checkout from Subversion` dialog. 
-  # Select `OpenCV2_Cookbook`  <br>  [Ch1_Checkout_from_Subversion_1.png]  <br> And click on `Checkout`
-  # Select location for the example code
-  # Select checkout options, you may want to ask to create a subdirectory for the code as shown in the example: <br>  []
+  # Select `http://javacv-examples.googlecode.com/svn/trunk/`  <br>  [Ch1_Checkout_from_Subversion_1.png]  <br> And click on `Checkout`
+  # Select location for the example code (you may have to create a new folder, call it `javacv-examples`)
+  # Confirm checkout options (default should be fine)
   # Confirm repository format version (default should be fine)
   # Wait for IDEA to download the examples
-  # Once download is finished, IDEA will ask you whether to create a project for the examples. Select `Yes`.
-  # You will go through a project creation wizard. Select defaults, except when asked to overwrite the module file: IDEA will say that `OpenCV2_Examples.iml` already exists, say `No` if asked to overwrite. <br> [example dialog]
+  # Once download is finished, IDEA will ask you whether to create a project for the examples. Select `No` since the checkout already has project definintion.
+  # Select from manu `File` > `Open Project...` and select the folder where you have checked out the code.
 
-==Let Maven Download What it Needs==
-Maven is used to define dependencies and simplify setup. You will need to execute it once to download what it needs. It needs to be done only once.
-  # Click on the vertical `Maven Projects` tab on the right side of the IDEA window to open `Maven Projects` panel.
-  # Click on "+" sign to add a Maven project definition file "pom.xml" and select `pom.xml` in the `OpenCV2_Cookbook` directory.
-  # Expand `OpenCV2_Cookbook` > `Lifecycle`, Select `compile` and click on green triangle to compile the examples. This will download needed dependencies and build the example code. This should finish without errors.
+==...==
+...
 
 ==Installing OpenCV and JavaCV Libraries==
 Now you need to get OpenCV and JavaCV libraries.
