@@ -43,7 +43,7 @@ You can download it isung IDEA, described in next section, or you can also use y
 ==Downloading Examples using IDEA==
 
   # Start IDEA
-  # Select from menu: `Version Control` > `Checkout from Version Control` > `Subversion` <br> [http://code.google.com/p/javacv-examples/wiki/Ch1_Checkout_from_Subversion_1.png]
+  # Select from menu: `Version Control` > `Checkout from Version Control` > `Subversion` <br> [javacv-examples.googlecode.com/svn/wiki/Ch1_Checkout_from_Subversion_1.png]
   # Click on the "+" next to `Repositories` and add location of the `OpenCV2_Cookbook` examples: `http://javacv-examples.googlecode.com/svn/trunk/` <br> [Ch1_New_Repository_Location_1.png] 
   # Click `OK` to add return to `Checkout from Subversion` dialog. 
   # Select `http://javacv-examples.googlecode.com/svn/trunk/`  <br>  [Ch1_Checkout_from_Subversion_1.png]  <br> And click on `Checkout`
