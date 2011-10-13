@@ -1,4 +1,4 @@
-#summary JavaCV versions of C++ examples from chapter 1 of the book "OpenCV2 Computer Vision Applications Programming Cookbook" titled "Playing with Images"
+#summary JavaCV versions of C++ examples from Chapter 1 of the book "OpenCV2 Computer Vision Applications Programming Cookbook" titled "Playing with Images"
 #labels Featured
 
 <wiki:toc max_depth="2" />
