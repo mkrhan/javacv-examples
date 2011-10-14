@@ -43,10 +43,10 @@ You can download it isung IDEA, described in next section, or you can also use y
 ==Downloading Examples using IDEA==
 
   # Start IDEA
-  # Select from menu: `Version Control` > `Checkout from Version Control` > `Subversion` <br> [http://javacv-examples.googlecode.com/svn/wiki/Ch1_Checkout_from_Subversion_1.png]
-  # Click on the "+" next to `Repositories` and add location of the `OpenCV2_Cookbook` examples: `http://javacv-examples.googlecode.com/svn/trunk/` <br> [http://javacv-examples.googlecode.com/svn/wiki/Ch1_New_Repository_Location_1.png] 
+  # Select from menu: `Version Control` > `Checkout from Version Control` > `Subversion` <br> [http://javacv-examples.googlecode.com/svn/wiki/images/Ch1_Checkout_from_Subversion_1.png]
+  # Click on the "+" next to `Repositories` and add location of the `OpenCV2_Cookbook` examples: `http://javacv-examples.googlecode.com/svn/trunk/` <br> [http://javacv-examples.googlecode.com/svn/wiki/images/Ch1_New_Repository_Location_1.png] 
   # Click `OK` to add return to `Checkout from Subversion` dialog. 
-  # Select `http://javacv-examples.googlecode.com/svn/trunk/`  <br>  [http://javacv-examples.googlecode.com/svn/wiki/Ch1_Checkout_from_Subversion_2.png]  <br> And click on `Checkout`
+  # Select `http://javacv-examples.googlecode.com/svn/trunk/`  <br>  [http://javacv-examples.googlecode.com/svn/wiki/images/Ch1_Checkout_from_Subversion_2.png]  <br> And click on `Checkout`
   # Select location for the example code (you may have to create a new folder, call it `javacv-examples`)
   # Confirm checkout options (default should be fine)
   # Confirm repository format version (default should be fine)
@@ -199,6 +199,6 @@ However for the sake of completeness an equivalent of a Qt GUI application prese
 As the original, it is a simple frame with two buttons "Open Image" and "Process" on the left.
 Loaded image is displayed in the middle of the frame. The example is using Scala Swing framework, which may be interesting in its own right.
 
-[Ex01MyFirstOpenCVApp.png]
+[http://javacv-examples.googlecode.com/svn/wiki/images/Ex01MyFirstOpenCVApp.png]
 
 You can find code for the `Ex2MyFirstGUIApp` example [https://code.google.com/p/javacv-examples/source/browse/trunk/OpenCV2_Cookbook/src/opencv2_cookbook/chapter01/Ex2MyFirstGUIApp.scala here].
