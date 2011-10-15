@@ -108,6 +108,35 @@ The code is organized into packages that correspond to chapters in the Cookbook,
 Individual examples roughly correspond to sections within each chapter.
 
  * [OpenCV2_Cookbook_Examples_Chapter_1 Chapter 1] describes IDE setup to run the examples, gives a basic example of loading and displaying an image, and an example of a basic GUI example that does basic image processing.
+ 
+=List of Examples=
+
+ * Chapter 1
+   # `Ex01MyFirstOpenCVApp` - load an image and show it in a window (CanvasFrame)
+   # `Ex2MyFirstGUIApp` - Simple GUI application build using Scala Swing. The application has two buttons on the left
+                        "Open Image" and "Process". The opened image is displayed in the middle. When "Process" button
+                        is pressed the image is flipped upside down and its red and blue channels are swapped.
+ * Chapter 2
+   # `Ex01Salt` - Set individual, randomly selected, pixels to a fixed value. Use ImageJ's ImageProcessor to access pixels.
+   # `Ex02ColorReduce` - Reduce colors in the image by modifying color values in all bands the same way.
+   # `Ex03Sharpen` - Use kernel convolution to sharpen an image: `filter2D()`.
+   # `Ex04BlendImages` - Blend two images using weighted addition: `cvAddWeighted()`.
+   # `Ex05ROILogo` - Paste small image into a larger one using a region of interest: `IplROI` and `cvCopy()`.
+ * ...
+ * Chapter 5
+   # `Ex1ErodingAndDilating` - Morphological erosion and dilation: `cvErode()` and `cvDilate()`.
+   # `Ex2OpeningAndClosing` - Morphological opening and closing: `cvMorphologyEx()`.
+   # `Ex3EdgesAndCorners` - Detection of edges and corners using morphological filters.
+   # `Ex4WatershedSegmentation` - Image segmentation using watershed algorithm.
+ * ...
+ * Chapter 8
+   # `SIFT` - Extraction SIFT features using C++ API: `SiftFeatureDetector`
+   # `SURF` - Extraction SURF features using C++ API: `SurfFeatureDetector`
+   # `SURF_c` - Extraction SURF features using C API: `cvExtractSURF`
+ * ...
+ * Utilities
+   # `OpenCVUtils` - reading and writing of image files, display of images, drawing of features on images, conversions between OpenCV image representations.
+   # `OpenCVImageJUtils` - conversion between OpenCV and ImageJ image representations.
 
 =Why Scala?=
 [http://www.scala-lang.org Scala] was chosen since it is more expressive than Java. You can achieve the same result with smaller amount of code. Smaller boilerplate code makes examples easier to read and understand. Unlike many other JVM languages, compiled Scala code is fast, on par with Java. Custom image processing code may require loops over image pixels. Specialized Scala compiler plugins, like [https://code.google.com/p/scalacl/wiki/ScalaCLPlugin ScalaCL], can optimize and significantly speed up execution of loops. 
